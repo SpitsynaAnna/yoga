@@ -124,7 +124,7 @@ class RegistrationsTable extends \WP_List_Table
                 $post = get_post($item[$column_name]);
                 return $post->post_title;
             case 'created_at':
-                return wp_date(get_option('date_format') . ' ' . get_option('time_format'), strtotime($item[$column_name]));
+                return wp_date(get_option('date_format'), strtotime($item[$column_name]));
             case 'price_frequency':
                 return $this->frequency_label($item[$column_name]);
             case 'payment_status':
