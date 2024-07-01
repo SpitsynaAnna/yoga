@@ -67,12 +67,13 @@
                     <td><input type="text" name="rfmp_fields_label[]" value="<?php echo esc_attr(isset($field_label[$key]) ? $field_label[$key] : '');?>" style="width:100%"></td>
                     <td><input type="hidden" name="rfmp_fields_value[]" value=""></td>
                     <td><input type="text" name="rfmp_fields_class[]" value="<?php echo esc_attr(isset($field_class[$key]) ? $field_class[$key] : '');?>" style="width:100%"></td>
-                    <td>
+                    <td><input type="checkbox" name="rfmp_fields_required[]" value="1" disabled checked><input type="hidden" name="rfmp_fields_required[]" value="1"></td>
+                    <!--<td>
                         <select name="rfmp_fields_required[]" style="width: 100%;">
-                            <option value="0"><?php esc_html_e('Hidden', 'mollie-forms');?></option>
-                            <option value="1" <?php echo (isset($field_required[$key]) && $field_required[$key] == '1' ? 'selected' : '');?>><?php esc_html_e('Visible', 'mollie-forms');?></option>
+                            <option value="0"><?php /*esc_html_e('Hidden', 'mollie-forms');*/?></option>
+                            <option value="1" <?php /*echo (isset($field_required[$key]) && $field_required[$key] == '1' ? 'selected' : '');*/?>><?php /*esc_html_e('Visible', 'mollie-forms');*/?></option>
                         </select>
-                    </td>
+                    </td> -->
                     <td width="1%"></td>
                 </tr>
             <?php } elseif ($type == 'submit') { ?>

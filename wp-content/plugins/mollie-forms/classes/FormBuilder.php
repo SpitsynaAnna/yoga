@@ -89,10 +89,13 @@ class FormBuilder
                 $html = '<input type="text" ' . $this->buildAtts($atts) . ' style="width: 100%">';
                 break;
             case 'discount_code':
-                $visible = isset($atts['required']);
+                $atts['required'] = true; // Устанавливаем обязательное поле
+                $html = '<input type="text" ' . $this->buildAtts($atts) . ' style="width: 100%" required>';
+                break;
+                /*$visible = isset($atts['required']);
                 unset($atts['required']);
                 $html = $visible ? '<input type="text" ' . $this->buildAtts($atts) . ' style="width: 100%">' : '';
-                break;
+                break; */
             case 'country':
                 $html = '<select ' . $this->buildAtts($atts) . ' style="width:100%;" style="width: 100%">';
                 foreach ($this->helpers->getCountries() as $code => $country) {
